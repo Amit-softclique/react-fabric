@@ -16,7 +16,21 @@ const Home = () => {
       left: 200,
       top: 100,
     });
-    canvas.add(circle);
+
+    const text = new fabric.IText('Hello fabric', {
+      left: 75,
+      top: 75,
+      fontSize: 16,
+      fontFamily: 'Arial',
+      fill: 'black',
+    });
+
+    const group = new fabric.Group([circle, text], {
+      left: 100,
+      top: 100,
+    });
+
+    canvas.add(group);
 
     return () => {
       canvas.dispose();
@@ -26,7 +40,7 @@ const Home = () => {
   return (
     <>
       <div style={{ textAlign: "center" }}>
-        <h1>Fabric.js on React</h1>
+        <h1>Fabric.js on React js</h1>
         <canvas ref={canvasRef} />
       </div>
     </>
